@@ -7,6 +7,7 @@
 #
 
 Pod::Spec.new do |s|
+  s.swift_version    = '4.1.2'
   s.name             = 'Renderer'
   s.version          = '1.0.0'
   s.summary          = 'ATP Renderer'

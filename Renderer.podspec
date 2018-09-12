@@ -21,11 +21,11 @@ Pod::Spec.new do |s|
 ATP Renderer
                        DESC
 
-  s.homepage         = 'https://bitbucket.org/atlasp/sdk/src/master/ios/Renderer'
+  s.homepage         = 'https://github.com/ideaalloc/Renderer'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'LGPL', :file => 'LICENSE' }
   s.author           = { 'Bill Lv' => 'bill.lv@atlasp.io' }
-  s.source           = { :git => 'https://bitbucket.org/atlasp/sdk/src/master/ios/Renderer', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/ideaalloc/Renderer', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '9.0'

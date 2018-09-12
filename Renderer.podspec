@@ -30,14 +30,11 @@ ATP Renderer is for Atlas Protocol Targeting Interactive Element Rendering
 
   s.ios.deployment_target = '9.0'
 
-  s.source_files = 'Renderer/Classes/**/*'
-  
-  # s.resource_bundles = {
-  #   'Renderer' => ['Renderer/Assets/*.png']
-  # }
+  s.source_files = 'Renderer/**/*'
 
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+  # s.public_header_files = 'Pods/**/*.h'
+  s.frameworks = 'UIKit'
+  s.dependency 'DLRadioButton', '~> 1.4'
+  s.dependency 'Validator'
 end
 

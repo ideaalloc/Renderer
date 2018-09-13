@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
   s.swift_version    = '4.1.2'
   s.name             = 'Renderer'
-  s.version          = '1.0.1'
+  s.version          = '1.0.2'
   s.summary          = 'ATP Renderer'
 
 # This description is used to generate tags and improve search results.

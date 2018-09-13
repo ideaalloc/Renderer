@@ -27,6 +27,11 @@ public class ValidationTextField: UITextField, UITextFieldDelegate {
     }
   }
 
+  public func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+    textField.resignFirstResponder()
+    return true
+  }
+
   public override func awakeFromNib() {
     super.awakeFromNib()
     self.validateOnInputChange(enabled: true)

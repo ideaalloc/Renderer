@@ -93,12 +93,26 @@ open class VotingRenderer: UIViewController, ATPRenderer {
       let tf = ValidationTextField(frame: frame)
       tf.addTarget(self, action: #selector(textFieldEditingDidChange(_:)), for: UIControlEvents.editingChanged)
       tf.addTarget(self, action: #selector(textFieldDidEndEditingAction(_:)), for: UIControlEvents.editingDidEnd)
+
+      let toolbar: UIToolbar = UIToolbar(frame: CGRect(x: 0, y: 0, width: tf.frame.size.width, height: 30))
+      // create left side empty space so that done button set on right side
+      let flexSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+      let doneBtn: UIBarButtonItem = UIBarButtonItem(title: "Done", style: .done, target: self, action: #selector(doneButtonAction))
+      toolbar.setItems([flexSpace, doneBtn], animated: false)
+      toolbar.sizeToFit()
+      //setting toolbar as inputAccessoryView
+      tf.inputAccessoryView = toolbar
+
       navigationItem.titleView = tf
 
       navigationController?.navigationBar.isTranslucent = false
     }
 
     setUI()
+  }
+
+  @objc private func doneButtonAction() {
+    navigationItem.titleView?.endEditing(true)
   }
 
   func unsetComponents() {

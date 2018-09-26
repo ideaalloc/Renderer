@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
   s.swift_version    = '4.1.2'
   s.name             = 'Renderer'
-  s.version          = '1.0.7'
+  s.version          = '1.0.8'
   s.summary          = 'ATP Renderer'
 
 # This description is used to generate tags and improve search results.
@@ -32,8 +32,7 @@ ATP Renderer is for Atlas Protocol Targeting Interactive Element Rendering
   s.ios.deployment_target = '9.0'
 
   s.source_files = 'Renderer/**/*'
-  s.exclude_files = 'Renderer/Renderer/Info.plist'
-  s.exclude_files = 'Renderer/RendererTests/Info.plist'
+  s.exclude_files = 'Renderer/**/Info.plist'
 
   # s.public_header_files = 'Pods/**/*.h'
   s.frameworks = 'UIKit'

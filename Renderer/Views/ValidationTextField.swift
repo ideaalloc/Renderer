@@ -41,7 +41,7 @@ public class ValidationTextField: UITextField, UITextFieldDelegate {
     super.init(coder: aDecoder)!
     delegate = self
     self.isUserInteractionEnabled = true
-    self.attributedPlaceholder = NSAttributedString(text: "NAS Address", alignment: .center)
+    self.attributedPlaceholder = NSAttributedString(text: "Please input your blockchain address", alignment: .center)
     self.font = UIFont.systemFont(ofSize: 14.0, weight: UIFont.Weight.regular)
     self.borderStyle = UITextBorderStyle.roundedRect
   }
@@ -50,7 +50,7 @@ public class ValidationTextField: UITextField, UITextFieldDelegate {
     super.init(frame: frame)
     delegate = self
     self.isUserInteractionEnabled = true
-    self.attributedPlaceholder = NSAttributedString(text: "NAS Address", alignment: .center)
+    self.attributedPlaceholder = NSAttributedString(text: "Please input your blockchain address", alignment: .center)
     self.font = UIFont.systemFont(ofSize: 14.0, weight: UIFont.Weight.regular)
     self.borderStyle = UITextBorderStyle.roundedRect
   }

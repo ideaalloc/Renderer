@@ -13,5 +13,5 @@ public class ErrorMsg {
   public static let net = "Cannot connect to the Internet"
   public static let other = "Unknown Error"
   public static let end = "Duplicate voting"
-  public static let invalidNasAddress = "Invalid NAS Address"
+  public static let invalidNasAddress = "Invalid Blockchain Address"
 }

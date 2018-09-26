@@ -23,6 +23,7 @@ open class VotingRenderer: UIViewController, ATPRenderer {
 
   fileprivate var nasAddress: String?
   fileprivate var question: String?
+  fileprivate var message: String?
 
   public func render() {
     setComponents()
@@ -45,6 +46,7 @@ open class VotingRenderer: UIViewController, ATPRenderer {
           if decodedResp["success"] as! Bool {
             let storyBoard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
             let finishViewController = storyBoard.instantiateViewController(withIdentifier: "FinishViewController")
+            UserDefaults.standard.set(self.message!, forKey: "voteSuccess")
             self.present(finishViewController, animated: true, completion: nil)
           } else {
             let errorMsg = decodedResp["errorMsg"]
@@ -196,7 +198,7 @@ open class VotingRenderer: UIViewController, ATPRenderer {
   @objc func voteProject() {
     let votedProject = allProjects[currentIndex]
     print("project", votedProject)
-    emitEvent(atpEvent: String(currentIndex + 1))
+    emitEvent(atpEvent: String(currentIndex))
   }
 
   // MARK: Helper
@@ -250,7 +252,7 @@ open class VotingRenderer: UIViewController, ATPRenderer {
     let tf: ValidationTextField = navigationItem.titleView as! ValidationTextField
     let nasAddr: String = tf.text!
     print("textField: \(nasAddr)")
-    let result = tf.validate(rule: ValidationRuleLength(min: 35, max: 35, error: ValidationError.invalidError(message: "Invalid Length")))
+    let result = tf.validate(rule: ValidationRuleLength(min: 35, max: 42, error: ValidationError.invalidError(message: "Invalid Length")))
     if result.isValid {
       debugPrint("valid")
       tf.setValid(isValid: true)
@@ -272,6 +274,7 @@ open class VotingRenderer: UIViewController, ATPRenderer {
             self.nasAddress = nasAddr
             self.allProjects = voteData.options
             self.question = voteData.question
+            self.message = voteData.message
             self.render()
             VotingRenderer.removeSpinner(spinner: sv)
           } else {

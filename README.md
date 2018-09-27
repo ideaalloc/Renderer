@@ -7,11 +7,11 @@ This library is for iOS devices.
 
 #### Installation Guide
 
-You want to add `pod 'Renderer', '~> 1.1.0'` similar to the following to your Podfile:
+You want to add `pod 'Renderer', '~> 1.1.1'` similar to the following to your Podfile:
 
 ```
 target 'MyApp' do
-  pod 'Renderer', '~> 1.1.0'
+  pod 'Renderer', '~> 1.1.1'
 end
 ```
 
